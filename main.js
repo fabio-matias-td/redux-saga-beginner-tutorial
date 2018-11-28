@@ -20,9 +20,10 @@ sagaMiddleware.run(rootSaga)
 const action = type => store.dispatch({type})
 
 function render() {
+  let state = store.getState();
   ReactDOM.render(
     <Counter
-      value={store.getState()}
+        value={state.counter}
       onIncrement={() => action('INCREMENT')}
       onDecrement={() => action('DECREMENT')}
       onIncrementAsync={() => action('INCREMENT_ASYNC')} />,
