@@ -2,7 +2,7 @@ import test from 'tape'
 
 import { put, call } from 'redux-saga/effects'
 import { delay } from 'redux-saga'
-import { incrementAsync } from './sagas'
+import { incrementAsync, fetchUser } from './sagas'
 
 test('incrementAsync Saga test', assert => {
     const gen = incrementAsync();
@@ -24,6 +24,14 @@ test('incrementAsync Saga test', assert => {
         { done: true, value: undefined },
         'incrementAsync Saga must be done'
     )
+
+    assert.end()
+})
+
+test('fetchUser Saga test', assert => {
+    const gen = fetchUser();
+    
+    // TO-DO
 
     assert.end()
 })
